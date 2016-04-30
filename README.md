@@ -7,7 +7,7 @@
 <p><b>Information</b></p>
 <ul>
     <li>The code in this app may not work for you.</li>
-    <li>Am having trouble with getting the logon buttons working on the party-details page.</li>    
+    <li>Am having trouble with getting the logon buttons working on the party-list page.</li>    
     <li>I try to learn Angular2 and Meteor to create awesome apps.</li>    
     <li>Diving into this code, may help others.</li>  
 </ul>
@@ -15,6 +15,8 @@
 <b>Issue</b>
 <a href="https://github.com/Urigo/angular2-meteor-accounts-ui/issues/2">angular2-meteor-accounts-ui</a>
 
+<b>Error</b>
+<img src="screenshot.png">
 
 <p><b>parties-list.html</b></p>
 <pre id="presourcecode_23977" class="displaysourcecode" >
@@ -45,3 +47,4 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
+
