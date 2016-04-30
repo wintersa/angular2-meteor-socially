@@ -27,9 +27,12 @@
 <pre>
 <img src="screenshot2.png" border="10" alt="Logon Buttons from <login-buttons></login-buttons>">
 </pre>
+<pre>
 <img src="screenshot3.png" border="5" alt="The Logon Form">
+</pre>
+<pre>
 <img src="screenshot4.png" border="5" alt="Account Logged on">
-
+</pre>
 
 <b>parties-list.html</b>
 <pre>
