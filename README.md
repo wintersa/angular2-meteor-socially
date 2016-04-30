@@ -6,12 +6,8 @@
 
 <p><b>Information</b></p>
 <ul>
-    <li>The code in this app may not work for you</li>
+    <li>The code in this app may not work for you.</li>
     <li>Am having trouble with getting the logon form working.</li>    
-</ul>
-
-
-<ul>
     <li>I try to learn Angular2 and Meteor to create awesome apps.</li>    
     <li>Diving into this code, may help others.</li>  
 </ul>
