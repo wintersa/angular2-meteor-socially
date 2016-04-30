@@ -18,6 +18,17 @@
 <b>Error</b>
 <img src="screenshot.png">
 
+<b>Workarround</b>
+<ul>
+    <li>meteor npm install --save css-loader</li>
+</ul>
+
+<b>Screenshot of working Logon Form with buttons</b>
+<img src="screenshot2.png">
+<img src="screenshot3.png">
+<img src="screenshot4.png">
+
+
 <b>parties-list.html</b>
 <pre id="presourcecode_23977" class="displaysourcecode" >
 &lt;div&gt;
