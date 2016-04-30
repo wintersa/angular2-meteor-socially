@@ -24,7 +24,7 @@
 <pre id="presourcecode_23977" class="displaysourcecode" >
 &lt;div&gt;
   &lt;parties-form&gt;&lt;/parties-form&gt;
-  <b><h6>&lt;login-buttons&gt;&lt;/login-buttons&gt;</h6></b>
+  <b>&lt;login-buttons&gt;&lt;/login-buttons&gt;</b>
   &lt;p&gt;
   &lt;ul&gt;
     &lt;br&gt;
