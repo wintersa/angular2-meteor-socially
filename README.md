@@ -24,13 +24,15 @@
 </ul>
 
 <b>Screenshot of working Logon Form with buttons</b>
+<pre>
 <img src="screenshot2.png" border="10" alt="Logon Buttons from <login-buttons></login-buttons>">
+</pre>
 <img src="screenshot3.png" border="5" alt="The Logon Form">
 <img src="screenshot4.png" border="5" alt="Account Logged on">
 
 
 <b>parties-list.html</b>
-<pre id="presourcecode_23977" class="displaysourcecode" >
+<pre>
 &lt;div&gt;
   &lt;parties-form&gt;&lt;/parties-form&gt;
   <b>&lt;login-buttons&gt;&lt;/login-buttons&gt;</b>
