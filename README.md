@@ -4,7 +4,7 @@
 
 <p><b>30 april 2016</b></p>
 
-<p><b>Information</b></p>
+<b>Information</b>
 <ul>
     <li>The code in this app may not work for you.</li>
     <li>Am having trouble with getting the logon buttons working on the party-list page.</li>    
@@ -18,7 +18,7 @@
 <b>Error</b>
 <img src="screenshot.png">
 
-<p><b>parties-list.html</b></p>
+<b>parties-list.html</b>
 <pre id="presourcecode_23977" class="displaysourcecode" >
 &lt;div&gt;
   &lt;parties-form&gt;&lt;/parties-form&gt;
@@ -47,4 +47,3 @@
   &lt;/ul&gt;
 &lt;/div&gt;
 </pre>
-
