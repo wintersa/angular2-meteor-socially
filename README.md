@@ -1,7 +1,8 @@
 <h2>Angular2 Meteor Tutorial</h4>
-
-
 <h6><b>Building Socially Tutorial App<b><h6>
+
+
+<p><b>30 april 2016</b></p>
 
 <p><b>Information</b></p>
 <ul>
