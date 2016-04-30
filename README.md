@@ -24,7 +24,7 @@
 </ul>
 
 <b>Screenshot of working Logon Form with buttons</b>
-<img src="screenshot2.png" border="5" alt="Logon Buttons from <login-buttons></login-buttons>">
+<img src="screenshot2.png" border="10" alt="Logon Buttons from <login-buttons></login-buttons>">
 <img src="screenshot3.png" border="5" alt="The Logon Form">
 <img src="screenshot4.png" border="5" alt="Account Logged on">
 
