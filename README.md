@@ -5,10 +5,18 @@
 
 <p><b>Information</b></p>
 <ul>
-    <li>I try to learn Angular2 and Meteor to create awesome apps.</li>
-    <li>Repository created for fix a issue with NPM package angular2-meteor-accounts-ui.</li>
-    <li>Diving into this code, may help others.</li>
+    <li>The code in this app may not work for you</li>
+    <li>Am having trouble with getting the logon form working.</li>    
 </ul>
+
+
+<ul>
+    <li>I try to learn Angular2 and Meteor to create awesome apps.</li>    
+    <li>Diving into this code, may help others.</li>  
+</ul>
+
+<b>Issue</b>
+<a href="https://github.com/Urigo/angular2-meteor-accounts-ui/issues/2">angular2-meteor-accounts-ui</a>
 
 
 <p><b>parties-list.html</b></p>
