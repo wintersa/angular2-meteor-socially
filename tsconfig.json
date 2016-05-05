@@ -1,6 +1,7 @@
 {
   "atom": {
-    "rewriteTsconfig": false
+    "rewriteTsconfig": false,
+    "buildOnSave": true
   },
   "compilerOptions": {
     "experimentalDecorators": true,
@@ -18,8 +19,5 @@
   ],
   "files": [
     "typings/party.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
   ]
 }

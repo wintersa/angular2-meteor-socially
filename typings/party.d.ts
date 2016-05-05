@@ -3,5 +3,16 @@ interface Party {
   name: string;
   description?: string;
   location: string;
-  owner?: string
+  owner?: string;
+  invited?: Array<string>;
+  public: boolean;
+}
+
+interface RSVP {
+  userId: string;
+  response: string;
+}
+
+declare var Fake: {
+    sentence(words: number): string;
 }
