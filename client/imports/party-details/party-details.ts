@@ -3,7 +3,7 @@ import {RouteParams} from 'angular2/router';
 import {Parties} from '../../../collections/parties.ts';
 import {RouterLink} from 'angular2/router';
 import {RequireUser} from 'angular2-meteor-accounts-ui';
-import {MeteorComponent} from 'angular2-meteor';
+import {MeteorComponent} from 'angular2-meteor/meteor_component';
 import {DisplayName} from '../pipes/pipes.ts';
 
 @Component({
@@ -42,5 +42,16 @@ export class PartyDetails extends MeteorComponent {
     } else {
       alert('Please log in to change this party');
     }
+  }
+
+  invite(user: Meteor.User) {
+    this.call('invite', this.party._id, user._id, (error) => {
+      if (error) {
+        alert(`Failed to invite due to ${error}`);
+        return;
+      }
+
+      alert('User successfully invited.');
+    });
   }
 }
