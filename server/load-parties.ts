@@ -26,6 +26,8 @@ export function loadParties() {
 
     for (var i = 0; i < parties.length; i++) {
       Parties.insert(parties[i]);
+      console.log("Added party: " + parties[i].name);
+      // this.Logger.log("Adding party:" + parties[i]);
     }
 
     // Generate Fake Parties with fake package
@@ -37,6 +39,7 @@ export function loadParties() {
         description: Fake.sentence(20),
         public: true
       });
+      //this.Logger.log("Adding party:" + parties[1]);
     }
   }
 };

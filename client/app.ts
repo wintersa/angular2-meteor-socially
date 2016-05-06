@@ -10,7 +10,6 @@ import {Logger} from '../services/logger.ts';
 
 @Component({
   selector: 'app',
-  providers: [],
   templateUrl: 'client/app.html',
   directives: [ROUTER_DIRECTIVES]
     // directives: [ROUTER_DIRECTIVES, LoginButtons]

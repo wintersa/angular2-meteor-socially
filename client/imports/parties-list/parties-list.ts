@@ -42,7 +42,7 @@ export class PartiesList extends MeteorComponent{
 
     this.autorun(() => {
       this.partiesSize = Counts.get('numberOfParties');
-      this.Logger.log("Parties counted: " + this.partiesSize);
+      this.Logger.log("Parties counted: " + Counts.get('numberOfParties'));
     }, true);
 }
 
