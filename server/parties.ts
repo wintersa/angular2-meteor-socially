@@ -33,6 +33,7 @@ Meteor.publish('parties', function(options: Object, location: string) {
   Counts.publish(this, 'numberOfParties',
     Parties.find(buildQuery.call(this, null, location)), { noReady: true });
   return Parties.find(buildQuery.call(this, null, location), options);
+  // console.log("Parties published");
 });
 
 Meteor.publish('party', function(partyId: string) {

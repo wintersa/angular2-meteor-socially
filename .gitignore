@@ -5,3 +5,6 @@ client/.meteor/
 client/**/*.js
 client/**/*.map
 node_modules/
+*.bck
+*.js
+*.map

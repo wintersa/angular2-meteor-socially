@@ -1,6 +1,5 @@
 import {Parties} from './parties.ts';
 import {Email} from 'meteor/email';
-import {check} from 'meteor/check';
 
 function getContactEmail(user:Meteor.User):string {
   if (user.emails && user.emails.length)
@@ -33,7 +32,7 @@ Meteor.methods({
 
       if (Meteor.isServer && to) {
         Email.send({
-          from: 'noreply@nforce-it.nl',
+          from: 'noreply@socially.com',
           to: to,
           replyTo: from || undefined,
           subject: 'PARTY: ' + party.name,
@@ -41,6 +40,51 @@ Meteor.methods({
                         \n\nCome check it out: ${Meteor.absoluteUrl()}\n`
         });
       }
+    }
+  },
+  reply: function(partyId: string, rsvp: string) {
+    check(partyId, String);
+    check(rsvp, String);
+
+    if (!this.userId)
+      throw new Meteor.Error('403', 'You must be logged-in to reply');
+
+    if (['yes', 'no', 'maybe'].indexOf(rsvp) === -1)
+      throw new Meteor.Error('400', 'Invalid RSVP');
+
+    let party = Parties.findOne({ _id: partyId });
+
+    if (!party)
+      throw new Meteor.Error('404', 'No such party');
+
+    if (party.owner === this.userId)
+      throw new Meteor.Error('500', 'You are the owner!');
+
+    if (!party.public && (!party.invited || party.invited.indexOf(this.userId) == -1))
+      throw new Meteor.Error('403', 'No such party'); // its private, but let's not tell this to the user
+
+    let rsvpIndex = party.rsvps ? party.rsvps.findIndex((rsvp) => rsvp.userId === this.userId) : -1;
+
+    if (rsvpIndex !== -1) {
+      // update existing rsvp entry
+      if (Meteor.isServer) {
+        // update the appropriate rsvp entry with $
+        Parties.update(
+          { _id: partyId, 'rsvps.userId': this.userId },
+          { $set: { 'rsvps.$.response': rsvp } });
+      } else {
+        // minimongo doesn't yet support $ in modifier. as a temporary
+        // workaround, make a modifier that uses an index. this is
+        // safe on the client since there's only one thread.
+        let modifier = { $set: {} };
+        modifier.$set['rsvps.' + rsvpIndex + '.response'] = rsvp;
+
+        Parties.update(partyId, modifier);
+      }
+    } else {
+      // add new rsvp entry
+      Parties.update(partyId,
+        { $push: { rsvps: { userId: this.userId, response: rsvp } } });
     }
   }
 });

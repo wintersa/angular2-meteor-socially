@@ -3,7 +3,7 @@ import {RouteParams} from 'angular2/router';
 import {Parties} from '../../../collections/parties.ts';
 import {RouterLink} from 'angular2/router';
 import {RequireUser} from 'angular2-meteor-accounts-ui';
-import {MeteorComponent} from 'angular2-meteor/meteor_component';
+import {MeteorComponent} from 'angular2-meteor';
 import {DisplayName} from '../pipes/pipes.ts';
 
 @Component({
@@ -22,13 +22,28 @@ export class PartyDetails extends MeteorComponent {
     var partyId = params.get('partyId');
 
     this.subscribe('party', partyId, () => {
-      this.party = Parties.findOne(partyId);
-    }, true);
+      this.autorun(() => {
+        this.getUsers(this.party);
+        this.party = Parties.findOne(partyId);
+      },   true);
+    });
 
     this.subscribe('uninvited', partyId, () => {
-      this.users = Meteor.users.find({_id: {$ne: Meteor.userId()}});
+      this.getUsers(this.party);
     }, true);
   }
+
+  getUsers(party: Party) {
+   if (party) {
+     this.users = Meteor.users.find({
+       _id: {
+         $nin: party.invited || [],
+         $ne: Meteor.userId()
+       }
+     });
+   }
+ }
+
 
   saveParty(party) {
     if (Meteor.userId()) {
